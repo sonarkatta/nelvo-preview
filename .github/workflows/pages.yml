@@ -18,7 +18,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - run: unzip -q 2-5-nelvo-poster-v2-p2.zip -d public
+      - run: unzip -q 3-6-nelvo-poster-v2-p2b.zip -d public
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
