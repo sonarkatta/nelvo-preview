@@ -21,6 +21,7 @@ jobs:
       - run: unzip -q 13-night-review-final.zip -d public
       - run: unzip -qo 1-nelvo-av-studio.zip -d public
       - run: unzip -qo 2-nelvo-gov-doc-sizer-gated.zip -d public
+      - run: unzip -qo 1-taarv-small-header-r1.zip -d public
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
