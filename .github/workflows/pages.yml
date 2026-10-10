@@ -22,7 +22,7 @@ jobs:
       - run: unzip -qo 1-nelvo-av-studio.zip -d public
       - run: unzip -qo 2-nelvo-gov-doc-sizer-gated.zip -d public
       - run: unzip -qo 2-taarv-small-header-r1.zip -d public
-      - run: unzip -qo 5-taarv-brand-images-fixed.zip -d public
+      - run: unzip -qo 1-taarv-master-preview.zip -d public
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
