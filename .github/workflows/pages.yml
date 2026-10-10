@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: unzip -q 1-nelvo-poster-v3.zip -d public
       - run: unzip -qo 1-nelvo-av-studio.zip -d public
-      - run: unzip -qo 1-nelvo-gov-doc-sizer-gated.zip -d public
+      - run: unzip -qo 2-nelvo-gov-doc-sizer-gated.zip -d public
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
