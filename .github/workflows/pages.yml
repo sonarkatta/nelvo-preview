@@ -24,6 +24,7 @@ jobs:
       - run: unzip -qo 2-taarv-small-header-r1.zip -d public
       - run: unzip -qo 1-taarv-master-preview.zip -d public
       - run: unzip -qo 1-taarv-script-fix.zip -d public
+      - run: unzip -qo 2-taarv-visual-fix.zip -d public
       - name: Clear wordmark from unchanged tagline
         run: |
           find public -name "*.html" -exec sed -i 's/width:830px;height:auto;max-width:100%;margin:auto/width:830px;height:auto;max-width:100%;margin:auto;transform:translateY(clamp(-24px,-2vw,-8px))/g' {} +
