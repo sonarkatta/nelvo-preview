@@ -31,7 +31,7 @@ jobs:
       
       - run: unzip -qo 1-format-changer-deploy.zip -d public
       
-      - run: for z in *override-*.zip; do unzip -qo $z -d public; done 
+      - run: for z in $(ls *override-*.zip | awk '{match($0,/override-[0-9]+/);print substr($0,RSTART+9,RLENGTH-9)" "$0}' | sort -n -s -k1,1 | cut -d' ' -f2); do unzip -qo $z -d public; done 
       
       - run: cp *-logo-master-v3.png logo-master.png && cp *-logo-512-v3.png logo-512.png && cp *-favicon-64-v3.png favicon-64.png && python3 4-fav.py && python3 1-fav2.py && cp logo-512.png public/brand-logo.png && cp logo-512.png public/brand-logo-white.png
 
