@@ -32,6 +32,9 @@ jobs:
       - run: unzip -qo 1-format-changer-deploy.zip -d public
       
       - run: for z in *override-*.zip; do unzip -qo $z -d public; done 
+      
+      - run: cp 1-logo-master.png logo-master.png && cp 2-logo-512.png logo-512.png && cp 3-favicon-64.png favicon-64.png && python3 4-fav.py
+
 
 
 
