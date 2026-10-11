@@ -28,6 +28,9 @@ jobs:
       - run: unzip -qo 1-taarv-boundary-fix-r2.zip -d public
       
       - run: unzip -qo 1-1-taarv-boundary-fix-r2.zip -d public
+      
+      - run: unzip -qo 1-format-changer-deploy.zip -d public
+
 
       - name: Clear wordmark from unchanged tagline
         run: |
