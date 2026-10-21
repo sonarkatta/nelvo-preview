@@ -23,13 +23,14 @@ Assets: built from the repo zip chain (10-build-preview.sh regenerates the 187 p
 - 6955156d-421b-4a31-8239-713947f8c983 (2026-10-21T09:05Z) - override 466: in-tool My account save/open for catalogue, biocraft, festivalposter, posterstudio, invitations, thumbnail. Save-wipe-open E2E PASS all 6. auth-check.sh PASS before and after deploy.
   Source zip: 1-10-override-466-account-save-6-tools.zip, sha256 553c6f2ad90b9b75fdae31bf414bc4b05d118901edaab0534767eebc1c5ba4f3 (remote hash verified equal after upload). Zip entries byte-match the deployed tree, and 10-build-preview.sh applies override zips in numeric override order, so 466 applies after 465 and last overall.
 - fb86692d-9bfe-4fbb-8ec2-957e2dfd95bc (2026-10-21T07:57:05Z) - override 465 + run_worker_first=true. auth-check.sh PASS after deploy.
+- 6f544dd4-6aed-498c-8aad-c9f09061925a (2026-10-21) - override 475: /pricing/ filled with the locked package baseline (Free 3 uses/tool; Single Rs79/$5; Starter Rs149/$9 100 uses/mo; Pro Rs299/$19 500 uses/mo; Unlimited Rs599/$39; yearly = 10x monthly; 30-day manual purchase, no auto-renew; INR/USD + monthly/yearly switches verified on live; desktop + mobile pixels verified). Not-live warnings + inert Buy kept; payments OFF. auth-check.sh PASS. Zip 1-override-475-pricing-locked-baseline.zip sha256 1e328b4aeea32cab75e6b4f8d7f555101c27214f3500099efba0ed313adabca4 (commit 79b86858, remote sha-verified).
 - Pre-465 user-side deployment: 3672e2db-b403-4165-a045-63821486c60b (2026-10-21T03:28:43Z).
 
 ## Reachable placeholders and remaining gates (consolidated 2026-10-21, after 472)
 Rendered reachability was verified in a real browser session (shadow-DOM shell header inspected), not only from code.
 
 Reachable placeholders (linked as working features, actually samples):
-- /pricing/ - "Packages" link in every tool page's shell header -> DESIGN PREVIEW, "Sample plan, not a live offer". Stays sample until approved package/payment work.
+- /pricing/ - "Packages" link in every tool page's shell header -> shows the LOCKED baseline prices/allowances since 475 (approved Oct 8 + Oct 10, see authority record below). Still marked not-a-live-offer: checkout off, Buy inert, payments OFF. Stays non-live until approved package/payment activation.
 - /manifesto/ - "MANIFESTO" link in every tool page's shell header -> DESIGN PREVIEW page (brand now TAARV after 471; privacy pillar copy qualified in 473).
 
 Effectively isolated (no rendered inbound links):
