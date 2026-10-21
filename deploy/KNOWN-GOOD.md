@@ -38,7 +38,7 @@ Effectively isolated (no rendered inbound links):
 
 Remaining gates before any public launch (all unchanged, none approved):
 - Real-device pass (iPhone + ASUS VivoBook), including the video export flow (video export UNVERIFIED: cloud-browser media pipeline hangs on any mp4, environment cause not conclusively established).
-- Real PowerPoint file test (presentation-maker).
+- Real PowerPoint file test (presentation-maker). Partial progress 2026-10-21: pptx export structurally validated in cloud browser - valid OOXML, opens in python-pptx, multi-slide + bar chart + speaker notes + unicode (Devanagari, rupee) round-trip intact; gate stays open until a file is opened in the actual PowerPoint app on a real device.
 - Legal review/inclusion unresolved - do not fold legal-draft into launch.
 - Packages/payment approval - pricing page stays sample, nelvo-monetization worker endpoint preserved as-is, MONETIZATION never enabled by agents.
 - Explicit public GO from the user.
