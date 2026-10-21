@@ -43,6 +43,37 @@ Remaining gates before any public launch (all unchanged, none approved):
 - Packages/payment approval - pricing page stays sample, nelvo-monetization worker endpoint preserved as-is, MONETIZATION never enabled by agents.
 - Explicit public GO from the user.
 
+## Packages and pricing authority record (recovered 2026-10-21)
+Original approvals (verbatim, with message IDs). Baseline for any future package/payment work; unanswered later proposals do NOT change this baseline.
+
+Lock 1 (2026-10-08, WhatsApp):
+- 23:38:29 user wamid.HBgMOTE4NjY5ODQ4MDAwFQIAEhgUM0E0MUYxRTY3RTNCNzY3MzE2QzAA: "Price single 79 and Aple bakiche rates no other confusion"
+- 23:38:41 agent wamid.HBgMOTE4NjY5ODQ4MDAwFQIAERgSOUUzNTRCNTZBNDI4RUMxNEFEAA==: "Locked: Free (3 uses/tool) + Single Tool 79/mo + 149/299/599 + world $9/19/39 + yearly 2 months free. No category packs, no confusion."
+- 23:39:09 user wamid.HBgMOTE4NjY5ODQ4MDAwFQIAEhgUM0E0OTgyNTRENjgyRDdEMjY0RkUA: "Yes"
+- Same evening: per-country packages rejected by user ("All countries different packages" 23:11:17 -> 2-tier INR/USD); INR and USD never shown together (user 23:14:12).
+
+Lock 2 (2026-10-10, iMessage; refines Lock 1):
+- 23:24:30 agent phonemsg-01M4KF7F7D71R8R1528WV0SAG6: FREE 3 uses/tool (account); SINGLE 79/$5 one tool 30 days; STARTER 149/$9 100 uses/mo; PRO 299/$19 500 uses/mo; UNLIMITED 599/$39 limitless; manual purchase, no auto-renew. 23:24:31 agent: "He ok asel tar 'ok' kar".
+- 23:25:54 user phonemsg-01M4KFA2A5FPPBRFWESXFQP1KD: "599 per year ka month" -> 23:26:00 agent: monthly; year = 10x monthly = 5,990/yr (2 months free), manual, no auto-renew.
+- 23:26:30 user phonemsg-01M4KFB5317CEHH5V789VAJSD7: "Ok". 23:26:36 agent: "Packages lock!"
+- 23:32:23 agent stated 2 conditions (later AI/cloud tools excluded; Unlimited = personal use, no auto/resale) - agent-stated, not objected to; NOT user permission by itself.
+
+Later user restrictions (2026-10-19, WhatsApp):
+- 23:35:36 user wamid.HBgMOTE4NjY5ODQ4MDAwFQIAEhgUM0FCOTUyQzFGQTJDODhCOUVCMTcA: "But we are not free"
+- 23:37:41 user wamid.HBgMOTE4NjY5ODQ4MDAwFQIAEhgUM0FDRTQzRDgwMThCMUVFNkYzNjEA: "Mg sagle freech waprat bastil paid kashala ghetil"
+- Agent 23:37:51 proposed small daily free taste (2-3 uses/day, HD/batch/bulk/history in Pro), asked "Chalel?" - NO user confirmation on record.
+
+Genuinely open (only these):
+- Free-tier reset semantics (locked "3 uses/tool" states no reset period; daily-reset and PDF-specific daily taste were proposed, never confirmed).
+- Razorpay International Payments ON (requested of user 2026-10-19 10:18:22 and 23:04:47; no confirmation on record).
+- Final GO.
+
+Source limitations (2026-10-21 live vault check):
+- Vault holds "Nelvo Razorpay LIVE API" (rzp_live_ Key ID + secret, both populated) and "Nelvo Razorpay TEST API" (both populated). Do not ask user to re-add keys.
+- Whether the live keys are still active in Razorpay, account KYC status, and International Payments state are UNVERIFIED (key presence in vault is not equivalent to active/approved account state; no Razorpay dashboard credentials in vault).
+- Unanswered 2026-10-15 proposal (99/mo or 799/yr, $2.49/$19.99, 3 uses/tool/day, drop password gate) does not revoke or modify the locks above.
+- Payments stay OFF; MONETIZATION never enabled by agents; no account creation by agents.
+
 ## Incident (do not roll back to)
 - 0a863408-c210-46fd-9c11-bd36594fb9de (07:56:36Z-07:57:05Z, 29.7s): wrangler [assets] default served assets before the worker, bypassing Basic auth on asset paths. Tool content was still AES ciphertext behind the in-page gate. No access logs exist for the window (logpush off, no tails; bypassed requests never invoked the worker).
 
