@@ -4,6 +4,8 @@ Worker: taarv-preview (Cloudflare Workers Static Assets + gate worker).
 Assets: built from the repo zip chain (10-build-preview.sh regenerates the 187 public files).
 
 ## Known-good
+- 78a4f545-22a5-4c08-970f-597a8ffb55ec (2026-10-21T09:56Z) - override 470: pricing tab title "Packages - NELVO" -> "Packages | TAARV" and header logo alt -> "TAARV" (logo image already his TAARV crown mark; text-only, layout unchanged). auth-check.sh PASS after deploy; pricing page byte-matches live. (af1ab6f3 at 09:55Z was a content-identical redeploy of dd5bf582 from an aborted patch run - no content change.)
+  Source zip: 1-14-override-470-pricing-title-brand.zip, sha256 4221826c3c9cc75020a80e23982067803fd8aaf85928f8f8a22f699ef7a876fd (remote hash verified equal).
 - dd5bf582-44e3-42a6-abe9-a84f6181c89a (2026-10-21T09:46Z) - override 469: AV Studio stale Nelvo branding reconciled to TAARV (page title, header wordmark, footer; text-only, no layout change); size formatter shows bytes below 1 KB so small downloads no longer display "0 KB" (KB/MB formatting unchanged). auth-check.sh PASS after deploy; av-studio page byte-matches live.
   Source zip: 4-13-override-469-av-studio-branding-size.zip, sha256 e0fe876094edd06de78423702ba0f448589e8a2a040ec36b3c71659aec144375 (remote hash verified equal).
 - 515980a6-687a-4bab-90ad-d5cb75a31b7b (2026-10-21T09:34Z) - override 468: invitations mobile header keeps Undo/Redo accessible (wrap instead of hide). auth-check.sh PASS after deploy.
