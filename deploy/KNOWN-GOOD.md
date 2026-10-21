@@ -4,6 +4,8 @@ Worker: taarv-preview (Cloudflare Workers Static Assets + gate worker).
 Assets: built from the repo zip chain (10-build-preview.sh regenerates the 187 public files).
 
 ## Known-good
+- 515980a6-687a-4bab-90ad-d5cb75a31b7b (2026-10-21T09:34Z) - override 468: invitations mobile header keeps Undo/Redo accessible (wrap instead of hide). auth-check.sh PASS after deploy.
+  Source zip: 1-12-override-468-invitations-mobile-undo.zip, sha256 88d1935b2cd7a2227bc103bbc33ae882952280444934768c3f0ac79b8c4222f0 (remote hash verified equal; invitations page byte-matches live).
 - 87864b42-61a9-4b41-a9f3-005dd32bed18 (2026-10-21T09:30Z) - override 467: narrow-header collision fixes at <=520px (posterstudio, catalogue, invitations), truthful qualified privacy copy across all 6 tools (local by default, account upload only on explicit Save), thumbnail account-restore guard fix (tool pagehide persist clobbered restored localStorage). auth-check.sh PASS after deploy.
   Source zip: 1-11-override-467-mobile-copy-fixes.zip, sha256 1baf4e10259f806d20740416e8de992c67c8518e4a793549fd24f13d89daff76 (remote hash verified equal; zip entries byte-match live-served pages).
 - 6955156d-421b-4a31-8239-713947f8c983 (2026-10-21T09:05Z) - override 466: in-tool My account save/open for catalogue, biocraft, festivalposter, posterstudio, invitations, thumbnail. Save-wipe-open E2E PASS all 6. auth-check.sh PASS before and after deploy.
