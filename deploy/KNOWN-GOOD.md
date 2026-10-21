@@ -4,6 +4,10 @@ Worker: taarv-preview (Cloudflare Workers Static Assets + gate worker).
 Assets: built from the repo zip chain (10-build-preview.sh regenerates the 187 public files).
 
 ## Known-good
+- a1898edb-4bed-4d6e-a87c-4a5713fbd1d6 (2026-10-21T10:01Z) - override 472: usage-demo counter static text aligned with the JS ("3 sample uses left" / "0 / 3 sample used") so pre-click and post-click wording match. auth-check.sh PASS; page byte-matches live.
+  Source zip: 2-16-override-472-demo-counter-consistency.zip, sha256 916b281daa2375c79ac30da7e44515b20d8d50807f6972ea6ea679ae95ac6048 (remote hash verified equal).
+- 63baf1d4-d543-4b79-875c-3858523fcf68 (2026-10-21T09:59Z) - override 471: manifesto + usage-demo visible brand NELVO -> TAARV (titles, logo alts, eyebrows, manifesto body/footer line; DESIGN PREVIEW badges and preview notes preserved; layout unchanged). taarv-shell.js demo pill dead code simplified to "DEMO /" (the pill is display:none'd and removed by the shell itself at runtime - the "2 FREE USES LEFT" claim never rendered). auth-check.sh PASS; all three files byte-match live.
+  Source zip: 1-15-override-471-manifesto-demo-brand.zip, sha256 e49808006995592f66cacfd2c4183172c4bd0ca62ccbb44777e372ae8d9dcaa1 (remote hash verified equal).
 - 78a4f545-22a5-4c08-970f-597a8ffb55ec (2026-10-21T09:56Z) - override 470: pricing tab title "Packages - NELVO" -> "Packages | TAARV" and header logo alt -> "TAARV" (logo image already his TAARV crown mark; text-only, layout unchanged). auth-check.sh PASS after deploy; pricing page byte-matches live. (af1ab6f3 at 09:55Z was a content-identical redeploy of dd5bf582 from an aborted patch run - no content change.)
   Source zip: 1-14-override-470-pricing-title-brand.zip, sha256 4221826c3c9cc75020a80e23982067803fd8aaf85928f8f8a22f699ef7a876fd (remote hash verified equal).
 - dd5bf582-44e3-42a6-abe9-a84f6181c89a (2026-10-21T09:46Z) - override 469: AV Studio stale Nelvo branding reconciled to TAARV (page title, header wordmark, footer; text-only, no layout change); size formatter shows bytes below 1 KB so small downloads no longer display "0 KB" (KB/MB formatting unchanged). auth-check.sh PASS after deploy; av-studio page byte-matches live.
@@ -16,6 +20,24 @@ Assets: built from the repo zip chain (10-build-preview.sh regenerates the 187 p
   Source zip: 1-10-override-466-account-save-6-tools.zip, sha256 553c6f2ad90b9b75fdae31bf414bc4b05d118901edaab0534767eebc1c5ba4f3 (remote hash verified equal after upload). Zip entries byte-match the deployed tree, and 10-build-preview.sh applies override zips in numeric override order, so 466 applies after 465 and last overall.
 - fb86692d-9bfe-4fbb-8ec2-957e2dfd95bc (2026-10-21T07:57:05Z) - override 465 + run_worker_first=true. auth-check.sh PASS after deploy.
 - Pre-465 user-side deployment: 3672e2db-b403-4165-a045-63821486c60b (2026-10-21T03:28:43Z).
+
+## Reachable placeholders and remaining gates (consolidated 2026-10-21, after 472)
+Rendered reachability was verified in a real browser session (shadow-DOM shell header inspected), not only from code.
+
+Reachable placeholders (linked as working features, actually samples):
+- /pricing/ - "Packages" link in every tool page's shell header -> DESIGN PREVIEW, "Sample plan, not a live offer". Stays sample until approved package/payment work.
+- /manifesto/ - "MANIFESTO" link in every tool page's shell header -> DESIGN PREVIEW page (brand now TAARV after 471).
+
+Effectively isolated (no rendered inbound links):
+- /usage-demo/ - the shell demo pill is display:none'd and removed by the shell itself; only linked from the isolated /account/ page. Brand/quota wording corrected anyway (471/472).
+- /account/ ("Welcome back, Alex" design sample; the working account feature is the in-tool pill from 466, unaffected), /home/, /legal-draft/ (legal design sample).
+
+Remaining gates before any public launch (all unchanged, none approved):
+- Real-device pass (iPhone + ASUS VivoBook), including the video export flow (video export UNVERIFIED: cloud-browser media pipeline hangs on any mp4, environment cause not conclusively established).
+- Real PowerPoint file test (presentation-maker).
+- Legal review/inclusion unresolved - do not fold legal-draft into launch.
+- Packages/payment approval - pricing page stays sample, nelvo-monetization worker endpoint preserved as-is, MONETIZATION never enabled by agents.
+- Explicit public GO from the user.
 
 ## Incident (do not roll back to)
 - 0a863408-c210-46fd-9c11-bd36594fb9de (07:56:36Z-07:57:05Z, 29.7s): wrangler [assets] default served assets before the worker, bypassing Basic auth on asset paths. Tool content was still AES ciphertext behind the in-page gate. No access logs exist for the window (logpush off, no tails; bypassed requests never invoked the worker).
