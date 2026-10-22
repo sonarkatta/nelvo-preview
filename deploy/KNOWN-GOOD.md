@@ -86,3 +86,8 @@ Source limitations (2026-10-21 live vault check):
 ## Rollback
 cd deploy && wrangler rollback --version-id <id>   # needs CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID
 then: PREVIEW_PW=<pw> ./auth-check.sh
+
+## 2026-10-22 - Export battery: 19 tool export paths verified on preview (390px emulation)
+All 19 battery tools produced a real export blob captured in-page (hooked URL.createObjectURL) and validated locally (ffprobe/PIL/PDF header+%%EOF; QR decoded to the exact input URL): qrforge, certificate, chartmint, menumaker, marriagebio, specsheet, screenshots, jobcard, teacherkit, labels, societynotice, goldbook, gov-doc-sizer, goldrate, billmint, colorlab, kidspractice, printdesk, format-changer. AV Studio audio+video exports verified separately with ffprobe (MP4 h264/aac decodes, MP3 192kbps decodes).
+Corrections to earlier stuck-export observations (automation timing/flow, not defects): kidspractice export buttons enable only after paint() finishes (fonts/render wait); printdesk Download is a no-op until Generate runs (outs==null); format-changer needs a target-format chip selected and delivers results into an in-page history list (no auto-download).
+Scope: 19 export paths verified; this is NOT an all-37-pages export test. The 37-page phone-layout sweep (zero horizontal overflow) was 390px emulation, not a real device.
