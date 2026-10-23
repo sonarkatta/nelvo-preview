@@ -119,3 +119,6 @@ Wave 3 part 3 (Oct 23 ~20:41-20:56 IST): pdf-studio split (2 fresh synthetic pag
 
 ## 2026-10-23 account saved-tools alias grouping (current deploy 046743c3)
 /account/ saved-tools tiles: canonical 36-slug name map + alias grouping (festival-poster->festivalposter, poster-studio->posterstudio, stickermaker->sticker-maker). Display-only; no saved-file migration. Verified signed-in: Festival Poster merged to one tile (2 files), canonical routes. Backup: taarv-masters-backup nelvo-preview-masters/account/ + wave3-secondary RESULTS.md addendum.
+
+## 2026-10-23 account fallback hardening (current deploy 6eef6674)
+Unknown saved-file slugs render an honest "Tool not in the current catalogue." note instead of an Open link to a guessed route. Known tiles verified unchanged. Backup dca440e + new commit.
