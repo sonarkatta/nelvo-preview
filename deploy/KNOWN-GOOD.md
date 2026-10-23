@@ -122,3 +122,4 @@ Wave 3 part 3 (Oct 23 ~20:41-20:56 IST): pdf-studio split (2 fresh synthetic pag
 
 ## 2026-10-23 account fallback hardening (current deploy 6eef6674)
 Unknown saved-file slugs render an honest "Tool not in the current catalogue." note instead of an Open link to a guessed route. Known tiles verified unchanged. Backup dca440e + new commit.
+== 2026-10-23 deploy 040d1ee6-61a4-4183-b616-7276523f7db0: taarv-shell.js per-request getIdToken() (freshToken) for api()/blob()/dl(); fixes stale-token 400s on long-lived pages. auth-check PASS.
